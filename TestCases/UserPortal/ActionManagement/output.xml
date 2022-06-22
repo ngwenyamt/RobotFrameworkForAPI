@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.6 on win32)" generated="20211130 16:23:59.909" rpa="false" schemaversion="2">
+<suite id="s1" name="POST Actions" source="C:\Users\Tebogo.Ngwenya\PycharmProjects\Robot_V_Cloud_API\ESG\TestCases\UserPortal\ActionManagement\POST_Actions.robot">
+<test id="s1-t1" name="Create a new action- Negative Scenario">
+<kw name="Given POST request where the standalone description contains 1001 characters" library="POST_ActionsKeywords">
+<doc>POST request where the standalone description contains 1001 characters</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211130 16:24:02.462" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211130 16:24:00.449" endtime="20211130 16:24:02.462"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${StartDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:02.463" level="INFO">${StartDate} = 2021-11-30</msg>
+<status status="PASS" starttime="20211130 16:24:02.462" endtime="20211130 16:24:02.464"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DueDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=2day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:02.464" level="INFO">${DueDate} = 2021-12-02</msg>
+<status status="PASS" starttime="20211130 16:24:02.464" endtime="20211130 16:24:02.464"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>description=${Description_with_1001_cahr}</arg>
+<arg>priority=${Priority}</arg>
+<arg>Status=${Status}</arg>
+<arg>startDate=${StartDate}</arg>
+<arg>dueDate=${DueDate}</arg>
+<arg>userId=${User_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211130 16:24:02.465" level="INFO">${body} = {'description': 'SqAjzjIGkEqYXkr4n7jcv0hhT2Dur30nyN2NvKlzycPSVUeTJOVtTsJCA3wZlBIXJsqEVOr2R1MZc1gGKQBnWvdNZJMgTaQEckT40hOxDxRifuDEdOXqCxfQaUktdsULXZSebFiavmsBDb1gcR8pNTvAaA38dbRohdsG2k8RRQ3sgUMkv2Ogr5J...</msg>
+<status status="PASS" starttime="20211130 16:24:02.465" endtime="20211130 16:24:02.465"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211130 16:24:04.206" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211130 16:24:02.466" endtime="20211130 16:24:04.206"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211130 16:24:04.207" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211130 16:24:04.206" endtime="20211130 16:24:04.207"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211130 16:24:04.207" endtime="20211130 16:24:04.207"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the standalone description contains 1001 characters was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211130 16:24:04.208" endtime="20211130 16:24:04.209"/>
+</kw>
+<status status="PASS" starttime="20211130 16:24:00.449" endtime="20211130 16:24:04.209"/>
+</kw>
+<kw name="When POST request where the standalone action description is blank" library="POST_ActionsKeywords">
+<doc>POST request where the standalone action description is blank</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211130 16:24:06.213" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211130 16:24:04.209" endtime="20211130 16:24:06.213"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${StartDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:06.214" level="INFO">${StartDate} = 2021-11-30</msg>
+<status status="PASS" starttime="20211130 16:24:06.214" endtime="20211130 16:24:06.214"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DueDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=2day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:06.215" level="INFO">${DueDate} = 2021-12-02</msg>
+<status status="PASS" starttime="20211130 16:24:06.214" endtime="20211130 16:24:06.215"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>description=</arg>
+<arg>priority=${Priority}</arg>
+<arg>Status=${Status}</arg>
+<arg>startDate=${StartDate}</arg>
+<arg>dueDate=${DueDate}</arg>
+<arg>userId=${User_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211130 16:24:06.216" level="INFO">${body} = {'description': '', 'priority': 'High', 'Status': 'ToDo', 'startDate': '2021-11-30', 'dueDate': '2021-12-02', 'userId': '53908607-5bdc-42c6-c95f-08d98cce1a76'}</msg>
+<status status="PASS" starttime="20211130 16:24:06.215" endtime="20211130 16:24:06.216"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211130 16:24:08.065" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211130 16:24:06.216" endtime="20211130 16:24:08.065"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211130 16:24:08.069" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211130 16:24:08.066" endtime="20211130 16:24:08.069"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211130 16:24:08.069" endtime="20211130 16:24:08.070"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the standalone action description is blank was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211130 16:24:08.070" endtime="20211130 16:24:08.072"/>
+</kw>
+<status status="PASS" starttime="20211130 16:24:04.209" endtime="20211130 16:24:08.072"/>
+</kw>
+<tag>CreateAction-Negative Scenario</tag>
+<status status="PASS" starttime="20211130 16:24:00.448" endtime="20211130 16:24:08.073"/>
+</test>
+<test id="s1-t2" name="Create a new action- Positive Scenario">
+<kw name="Given POST request where the standalone action is valid" library="POST_ActionsKeywords">
+<doc>POST request where the standalone action is valid</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211130 16:24:10.086" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211130 16:24:08.079" endtime="20211130 16:24:10.086"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${StartDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:10.088" level="INFO">${StartDate} = 2021-11-30</msg>
+<status status="PASS" starttime="20211130 16:24:10.086" endtime="20211130 16:24:10.088"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DueDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=2day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:10.090" level="INFO">${DueDate} = 2021-12-02</msg>
+<status status="PASS" starttime="20211130 16:24:10.088" endtime="20211130 16:24:10.090"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211130 16:24:10.092" level="INFO">${email_with_100_char} = Khrcy08jXpI4u9TfDSiGHPkotVLaJ2BOFwvAxs7MbWe1nZRg3NqC6ldz5YUQEmautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211130 16:24:10.091" endtime="20211130 16:24:10.092"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>description=${Description_with_1000_cahr}</arg>
+<arg>priority=${Priority}</arg>
+<arg>Status=${Status}</arg>
+<arg>startDate=${StartDate}</arg>
+<arg>dueDate=${DueDate}</arg>
+<arg>userId=${User_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211130 16:24:10.094" level="INFO">${body} = {'description': 'SqAjzjIGkEqYXkr4n7jcv0hhT2Dur30nyN2NvKlzycPSVUeTJOVtTsJCA3wZlBIJsqEVOr2R1MZc1gGKQBnWvdNZJMgTaQEckT40OxDxRifuwDEdOXqCxfQaUktdsULXZSebFiavmsBDb1gcR8pNTvAaA38dbRohdsG2k8RRQ3sgUMkv2Ogr5JB...</msg>
+<status status="PASS" starttime="20211130 16:24:10.092" endtime="20211130 16:24:10.094"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211130 16:24:11.967" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211130 16:24:10.095" endtime="20211130 16:24:11.967"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211130 16:24:11.968" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211130 16:24:11.968" endtime="20211130 16:24:11.968"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211130 16:24:11.969" endtime="20211130 16:24:11.969"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the standalone action is valid was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211130 16:24:11.969" endtime="20211130 16:24:11.970"/>
+</kw>
+<status status="PASS" starttime="20211130 16:24:08.078" endtime="20211130 16:24:11.970"/>
+</kw>
+<kw name="And POST request where the standalone action is missing a responsible user" library="POST_ActionsKeywords">
+<doc>POST request where the standalone action is missing a responsible user</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211130 16:24:13.980" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211130 16:24:11.971" endtime="20211130 16:24:13.981"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${StartDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:13.982" level="INFO">${StartDate} = 2021-11-30</msg>
+<status status="PASS" starttime="20211130 16:24:13.981" endtime="20211130 16:24:13.983"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${DueDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>increment=2day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20211130 16:24:13.984" level="INFO">${DueDate} = 2021-12-02</msg>
+<status status="PASS" starttime="20211130 16:24:13.983" endtime="20211130 16:24:13.985"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>description=${Description_with_1000_cahr}</arg>
+<arg>priority=${Priority}</arg>
+<arg>Status=${Status}</arg>
+<arg>startDate=${StartDate}</arg>
+<arg>dueDate=${DueDate}</arg>
+<arg>userId=</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211130 16:24:13.988" level="INFO">${body} = {'description': 'SqAjzjIGkEqYXkr4n7jcv0hhT2Dur30nyN2NvKlzycPSVUeTJOVtTsJCA3wZlBIJsqEVOr2R1MZc1gGKQBnWvdNZJMgTaQEckT40OxDxRifuwDEdOXqCxfQaUktdsULXZSebFiavmsBDb1gcR8pNTvAaA38dbRohdsG2k8RRQ3sgUMkv2Ogr5JB...</msg>
+<status status="PASS" starttime="20211130 16:24:13.985" endtime="20211130 16:24:13.988"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211130 16:24:15.521" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211130 16:24:13.988" endtime="20211130 16:24:15.521"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211130 16:24:15.522" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211130 16:24:15.521" endtime="20211130 16:24:15.522"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211130 16:24:15.522" endtime="20211130 16:24:15.522"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the standalone action is missing a responsible user was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211130 16:24:15.523" endtime="20211130 16:24:15.523"/>
+</kw>
+<status status="PASS" starttime="20211130 16:24:11.971" endtime="20211130 16:24:15.523"/>
+</kw>
+<tag>CreateAction-Positive Scenario</tag>
+<status status="PASS" starttime="20211130 16:24:08.075" endtime="20211130 16:24:15.524"/>
+</test>
+<doc>Action Management[Add Records]- Tebogo Ngwenya</doc>
+<status status="PASS" starttime="20211130 16:23:59.911" endtime="20211130 16:24:15.526"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">CreateAction-Negative Scenario</stat>
+<stat pass="1" fail="0" skip="0">CreateAction-Positive Scenario</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="POST Actions">POST Actions</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

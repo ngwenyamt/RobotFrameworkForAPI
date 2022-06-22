@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.6 on win32)" generated="20211203 14:17:54.644" rpa="false" schemaversion="2">
+<suite id="s1" name="POST user" source="C:\Users\Tebogo.Ngwenya\PycharmProjects\Robot_V_Cloud_API\ESG\TestCases\UserPortal\UserManagement\POST_user.robot">
+<test id="s1-t1" name="Create a new user- Negative Scenario">
+<kw name="Given POST request when the user name is blank" library="POST_UserKeywords">
+<doc>POST request when the user name is blank</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:17:57.581" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:17:55.563" endtime="20211203 14:17:57.581"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:17:57.582" level="INFO">${email_with_100_char} = O6CZrJekKEvRPdaygIj01l8mbF2Dn3tHoYNXuwhLM4izB5WcUsQT9fxq7SpGAVautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:17:57.581" endtime="20211203 14:17:57.582"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:17:57.585" level="INFO">${body} = {'email': 'O6CZrJekKEvRPdaygIj01l8mbF2Dn3tHoYNXuwhLM4izB5WcUsQT9fxq7SpGAVautomationtest01jdfgdhds@isometrix.com', 'firstName': '', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', 'emailN...</msg>
+<status status="PASS" starttime="20211203 14:17:57.582" endtime="20211203 14:17:57.585"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:00.744" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:17:57.585" endtime="20211203 14:18:00.744"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:00.745" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:00.744" endtime="20211203 14:18:00.745"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:00.745" endtime="20211203 14:18:00.745"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user name is blank was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:00.746" endtime="20211203 14:18:00.747"/>
+</kw>
+<status status="PASS" starttime="20211203 14:17:55.562" endtime="20211203 14:18:00.747"/>
+</kw>
+<kw name="When POST request where the user name contains 65 characters" library="POST_UserKeywords">
+<doc>POST request where the user name contains 65 characters</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:02.759" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:00.748" endtime="20211203 14:18:02.759"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:02.760" level="INFO">${email_with_100_char} = Vi3Y4j1CM9PQkIJ8lAaHmunDcdSZvbzf6XUNWstpO2oGBLTqFEhRKy7x0ge5wrautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:02.760" endtime="20211203 14:18:02.760"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=${first_name_with_65_char}</arg>
+<arg>lastName=ngwenya</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:02.762" level="INFO">${body} = {'email': 'Vi3Y4j1CM9PQkIJ8lAaHmunDcdSZvbzf6XUNWstpO2oGBLTqFEhRKy7x0ge5wrautomationtest01jdfgdhds@isometrix.com', 'firstName': 'DCYmc6UUmLfHKdS4i25AuLEwgDbLTbdJMRMKoiUMtZO2ViCv57ofzWj3CoWQ0l5oj', 'las...</msg>
+<status status="PASS" starttime="20211203 14:18:02.761" endtime="20211203 14:18:02.762"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:07.521" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:02.763" endtime="20211203 14:18:07.521"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:07.523" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:07.521" endtime="20211203 14:18:07.523"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:07.523" endtime="20211203 14:18:07.524"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the user name contains 65 characters was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:07.524" endtime="20211203 14:18:07.525"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:00.747" endtime="20211203 14:18:07.525"/>
+</kw>
+<kw name="And POST request when the user last name is blank" library="POST_UserKeywords">
+<doc>POST request when the user last name is blank</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:09.528" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:07.526" endtime="20211203 14:18:09.528"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:09.528" level="INFO">${email_with_100_char} = 6YpwmXyFDGQ7jfsRSelJNv8W2T0PdEcK4UVt5MAxIanZh9BCqubzLOi1kr3Hgoautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:09.528" endtime="20211203 14:18:09.529"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:09.530" level="INFO">${body} = {'email': '6YpwmXyFDGQ7jfsRSelJNv8W2T0PdEcK4UVt5MAxIanZh9BCqubzLOi1kr3Hgoautomationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': '', 'platformNotificationEnabled': 'true', 'emailNo...</msg>
+<status status="PASS" starttime="20211203 14:18:09.529" endtime="20211203 14:18:09.530"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:11.711" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:09.530" endtime="20211203 14:18:11.711"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:11.713" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:11.711" endtime="20211203 14:18:11.713"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:11.713" endtime="20211203 14:18:11.714"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user last name is blank was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:11.714" endtime="20211203 14:18:11.714"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:07.526" endtime="20211203 14:18:11.715"/>
+</kw>
+<kw name="And POST request where the user last name contains 65 characters" library="POST_UserKeywords">
+<doc>POST request where the user last name contains 65 characters</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:13.724" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:11.716" endtime="20211203 14:18:13.724"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:13.725" level="INFO">${email_with_100_char} = jnfqgLJNHbdyF2ozOPc3m6hk7vwATVrtZQl4RDBXsCSGYx0epuMU1iIW9a8KE5automationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:13.724" endtime="20211203 14:18:13.725"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name_with_65_char}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:13.727" level="INFO">${body} = {'email': 'jnfqgLJNHbdyF2ozOPc3m6hk7vwATVrtZQl4RDBXsCSGYx0epuMU1iIW9a8KE5automationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': 'DCYmc6UUmLfHKdS4i25AuLEwgDbLTbdJMRMKoiUMtZO2ViCv57...</msg>
+<status status="PASS" starttime="20211203 14:18:13.725" endtime="20211203 14:18:13.727"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:15.191" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:13.727" endtime="20211203 14:18:15.191"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:15.191" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:15.191" endtime="20211203 14:18:15.191"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:15.191" endtime="20211203 14:18:15.191"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the user last name contains 65 characters was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:15.191" endtime="20211203 14:18:15.193"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:11.715" endtime="20211203 14:18:15.193"/>
+</kw>
+<kw name="And POST request when the user email is blank" library="POST_UserKeywords">
+<doc>POST request when the user email is blank</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:17.195" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:15.193" endtime="20211203 14:18:17.195"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:17.196" level="INFO">${body} = {'email': '', 'firstName': 'tebogo', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', 'emailNotificationEnabled': 'true', 'title': 'Mr'}</msg>
+<status status="PASS" starttime="20211203 14:18:17.195" endtime="20211203 14:18:17.196"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:18.693" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:17.196" endtime="20211203 14:18:18.693"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:18.695" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:18.693" endtime="20211203 14:18:18.695"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:18.696" endtime="20211203 14:18:18.697"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user email is blank was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:18.698" endtime="20211203 14:18:18.698"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:15.193" endtime="20211203 14:18:18.699"/>
+</kw>
+<kw name="And POST request where the user email address contains 101 characters" library="POST_UserKeywords">
+<doc>POST request where the user email address contains 101 characters</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:20.714" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:18.702" endtime="20211203 14:18:20.714"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_101_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:20.715" level="INFO">${body} = {'email': 'xE5NskAxylJKvhFSi921cc0n1f42fvwgfn8OPOkjAQ3GLuySvSfpa7WJuZ8G8s4GXQGaeoM7tUnAXwPI8hxKRrs@isometrix.com', 'firstName': 'tebogo', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', ...</msg>
+<status status="PASS" starttime="20211203 14:18:20.714" endtime="20211203 14:18:20.715"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:23.000" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:20.715" endtime="20211203 14:18:23.000"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:23.005" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:23.000" endtime="20211203 14:18:23.005"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:23.005" endtime="20211203 14:18:23.006"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request where the user email address contains 101 characters was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:23.008" endtime="20211203 14:18:23.009"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:18.700" endtime="20211203 14:18:23.009"/>
+</kw>
+<kw name="And POST request when the user email address contains 1-100 characters in invalid format" library="POST_UserKeywords">
+<doc>POST request when the user email address contains 1-100 characters in invalid format</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:25.025" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:23.011" endtime="20211203 14:18:25.025"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_invalid_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:25.030" level="INFO">${body} = {'email': 'xE5NskAxylJKvhFSi921cc0n1f42fvwgfn8OPOkjAQ3GLuySvSfpa7WJuZ8G8s4GXQGaeoM7tUnAXwPI8hxKRru4xRqJYmRNYGuu', 'firstName': 'tebogo', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', '...</msg>
+<status status="PASS" starttime="20211203 14:18:25.026" endtime="20211203 14:18:25.030"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:27.319" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:25.031" endtime="20211203 14:18:27.319"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:27.320" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:27.319" endtime="20211203 14:18:27.320"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:27.320" endtime="20211203 14:18:27.320"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user email address contains 1-64 characters in invalid format was successful</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:27.320" endtime="20211203 14:18:27.321"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:23.010" endtime="20211203 14:18:27.321"/>
+</kw>
+<kw name="And POST request when the user title is blank" library="POST_UserKeywords">
+<doc>POST request when the user title is blank</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:29.335" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:27.322" endtime="20211203 14:18:29.336"/>
+</kw>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:29.337" level="INFO">${email_with_100_char} = Fdh0cjz1om4QNKxOJpVYPEBsCWkL6ynRlIgHTUitA9qX5fZrDew2baG3Mv87uSautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:29.336" endtime="20211203 14:18:29.338"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:29.340" level="INFO">${body} = {'email': 'Fdh0cjz1om4QNKxOJpVYPEBsCWkL6ynRlIgHTUitA9qX5fZrDew2baG3Mv87uSautomationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', '...</msg>
+<status status="PASS" starttime="20211203 14:18:29.338" endtime="20211203 14:18:29.341"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:31.529" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:29.341" endtime="20211203 14:18:31.529"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:31.532" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20211203 14:18:31.530" endtime="20211203 14:18:31.533"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>400</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:31.533" endtime="20211203 14:18:31.534"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user title is blank</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:31.534" endtime="20211203 14:18:31.535"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:27.321" endtime="20211203 14:18:31.535"/>
+</kw>
+<tag>CreateUser-Negative Scenario</tag>
+<status status="PASS" starttime="20211203 14:17:55.561" endtime="20211203 14:18:31.536"/>
+</test>
+<test id="s1-t2" name="Create a new user- Positive Scenario">
+<kw name="And POST request when the user name contains 1 character" library="POST_UserKeywords">
+<doc>POST request when the user name contains 1 character</doc>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:31.541" level="INFO">${email_with_100_char} = 2NW4epc9QrUVd0Lm3C1tXPRk8M6uv5infgYqBbaDJZszIEyhTFAxGoOHjwK7lSautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:31.540" endtime="20211203 14:18:31.541"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:33.553" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:31.541" endtime="20211203 14:18:33.553"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=t</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:33.557" level="INFO">${body} = {'email': '2NW4epc9QrUVd0Lm3C1tXPRk8M6uv5infgYqBbaDJZszIEyhTFAxGoOHjwK7lSautomationtest01jdfgdhds@isometrix.com', 'firstName': 't', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', 'email...</msg>
+<status status="PASS" starttime="20211203 14:18:33.554" endtime="20211203 14:18:33.557"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:37.366" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:33.557" endtime="20211203 14:18:37.366"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:37.368" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211203 14:18:37.367" endtime="20211203 14:18:37.368"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:37.368" endtime="20211203 14:18:37.369"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user name contains 1 character</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:37.369" endtime="20211203 14:18:37.369"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:37.369" endtime="20211203 14:18:37.371"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:31.539" endtime="20211203 14:18:37.372"/>
+</kw>
+<kw name="Then POST request when the user name contains 64 characters" library="POST_UserKeywords">
+<doc>POST request when the user name contains 64 characters</doc>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:37.374" level="INFO">${email_with_100_char} = 5rmCVcfHzOjqibR1sBTwaFg4py7LD3tP0Zuelx8k2hNGIKEMA6JUnoW9SXdYQvautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:37.374" endtime="20211203 14:18:37.374"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:39.381" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:37.374" endtime="20211203 14:18:39.381"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=${first_name_with_64_char}</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:39.382" level="INFO">${body} = {'email': '5rmCVcfHzOjqibR1sBTwaFg4py7LD3tP0Zuelx8k2hNGIKEMA6JUnoW9SXdYQvautomationtest01jdfgdhds@isometrix.com', 'firstName': 'DCYmc6UUmLfHKdS4i25AuLEwgDbLTbdJMRMKoiUMtZO2ViCv57ofzWj3CoWQ0l5o', 'last...</msg>
+<status status="PASS" starttime="20211203 14:18:39.381" endtime="20211203 14:18:39.382"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:44.339" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:39.382" endtime="20211203 14:18:44.339"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:44.340" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211203 14:18:44.339" endtime="20211203 14:18:44.340"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:44.340" endtime="20211203 14:18:44.341"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user name contains 64 characters</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:44.341" endtime="20211203 14:18:44.342"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:44.342" endtime="20211203 14:18:44.343"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:37.373" endtime="20211203 14:18:44.343"/>
+</kw>
+<kw name="And POST request when the user last name contains 1 character" library="POST_UserKeywords">
+<doc>POST request when the user last name contains 1 character</doc>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:44.345" level="INFO">${email_with_100_char} = Y2fO0JQmihMFy6jaow7xVdP5WvpuNX3sEgRcGKqDTkAHebCBzn18tZrLS9UI4lautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:44.345" endtime="20211203 14:18:44.345"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:46.347" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:44.345" endtime="20211203 14:18:46.347"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=n</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:46.349" level="INFO">${body} = {'email': 'Y2fO0JQmihMFy6jaow7xVdP5WvpuNX3sEgRcGKqDTkAHebCBzn18tZrLS9UI4lautomationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': 'n', 'platformNotificationEnabled': 'true', 'emailN...</msg>
+<status status="PASS" starttime="20211203 14:18:46.347" endtime="20211203 14:18:46.349"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:49.361" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:46.349" endtime="20211203 14:18:49.361"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:49.362" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211203 14:18:49.361" endtime="20211203 14:18:49.362"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:49.362" endtime="20211203 14:18:49.363"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user last name contains 1 character</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:49.363" endtime="20211203 14:18:49.364"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:49.364" endtime="20211203 14:18:49.365"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:44.344" endtime="20211203 14:18:49.365"/>
+</kw>
+<kw name="And POST request when the user last name contains 64 characters" library="POST_UserKeywords">
+<doc>POST request when the user last name contains 64 characters</doc>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:49.366" level="INFO">${email_with_100_char} = xjRbGU0hrMlEeLOZiIusF89HwSypKfXTNq2YnvVBaAo476tdmD1cCWJgQ5Pkz3automationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:49.366" endtime="20211203 14:18:49.366"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:51.369" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:49.366" endtime="20211203 14:18:51.369"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name_with_64_char}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:51.369" level="INFO">${body} = {'email': 'xjRbGU0hrMlEeLOZiIusF89HwSypKfXTNq2YnvVBaAo476tdmD1cCWJgQ5Pkz3automationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': 'DCYmc6UUmLfHKdS4i25AuLEwgDbLTbdJMRMKoiUMtZO2ViCv57...</msg>
+<status status="PASS" starttime="20211203 14:18:51.369" endtime="20211203 14:18:51.369"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:18:55.332" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:51.370" endtime="20211203 14:18:55.332"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:18:55.333" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211203 14:18:55.332" endtime="20211203 14:18:55.333"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:18:55.334" endtime="20211203 14:18:55.334"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user last name contains 64 character</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:55.334" endtime="20211203 14:18:55.334"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:18:55.334" endtime="20211203 14:18:55.335"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:49.365" endtime="20211203 14:18:55.336"/>
+</kw>
+<kw name="And POST request when the user email contains 1-100 characters in a valid format" library="POST_UserKeywords">
+<doc>POST request when the user email contains 1-100 characters in a valid format</doc>
+<kw name="Generate Email" library="UserDefinedKeywords">
+<var>${email_with_100_char}</var>
+<msg timestamp="20211203 14:18:55.336" level="INFO">${email_with_100_char} = 1lghHKwVRSA5MnGZ8vbqjEQxzOUDTPr9XeiCfctpyBJF2k3Ls4aWN06Iuo7dYmautomationtest01jdfgdhds@isometrix.com</msg>
+<status status="PASS" starttime="20211203 14:18:55.336" endtime="20211203 14:18:55.336"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211203 14:18:57.348" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211203 14:18:55.336" endtime="20211203 14:18:57.348"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${email_with_100_char}</arg>
+<arg>firstName=tebogo</arg>
+<arg>lastName=${last_name}</arg>
+<arg>platformNotificationEnabled=${platformNotificationEnabled}</arg>
+<arg>emailNotificationEnabled=${emailNotificationEnabled}</arg>
+<arg>title=Mr</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20211203 14:18:57.349" level="INFO">${body} = {'email': '1lghHKwVRSA5MnGZ8vbqjEQxzOUDTPr9XeiCfctpyBJF2k3Ls4aWN06Iuo7dYmautomationtest01jdfgdhds@isometrix.com', 'firstName': 'tebogo', 'lastName': 'ngwenya', 'platformNotificationEnabled': 'true', '...</msg>
+<status status="PASS" starttime="20211203 14:18:57.348" endtime="20211203 14:18:57.349"/>
+</kw>
+<kw name="Post Requests" library="UserDefinedKeywords">
+<var>${response}</var>
+<arg>${Relative_Path}</arg>
+<arg>${body}</arg>
+<msg timestamp="20211203 14:19:01.998" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20211203 14:18:57.349" endtime="20211203 14:19:01.998"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20211203 14:19:02.000" level="INFO">${status_code} = 201</msg>
+<status status="PASS" starttime="20211203 14:19:01.999" endtime="20211203 14:19:02.000"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211203 14:19:02.000" endtime="20211203 14:19:02.000"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>POST request when the user last name contains 64 character</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:19:02.000" endtime="20211203 14:19:02.001"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211203 14:19:02.002" endtime="20211203 14:19:02.003"/>
+</kw>
+<status status="PASS" starttime="20211203 14:18:55.336" endtime="20211203 14:19:02.003"/>
+</kw>
+<tag>CreateUser-Positive Scenario</tag>
+<status status="PASS" starttime="20211203 14:18:31.538" endtime="20211203 14:19:02.003"/>
+</test>
+<doc>User Management[Add Records]- Tebogo Ngwenya</doc>
+<status status="PASS" starttime="20211203 14:17:54.648" endtime="20211203 14:19:02.005"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">CreateUser-Negative Scenario</stat>
+<stat pass="1" fail="0" skip="0">CreateUser-Positive Scenario</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="POST user">POST user</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
